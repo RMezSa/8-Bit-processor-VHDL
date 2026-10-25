@@ -25,3 +25,8 @@ transcript
 
 # Otros
 *.tmp
+
+# GHDL
+build/
+*.ghw
+*.cf
