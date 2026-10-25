@@ -53,12 +53,19 @@ type mem_dato is array(0 to 95) of std_logic_vector(7 downto 0);
 	process(clk) 
 	begin
 	if (clk'event and clk = '1') then
+		-- La RAM ocupa x"80" a x"DF": el indice son los 7 bits bajos (0 a 95)
 		if (wr = '1') then
-			--Escribe, guarda lo que llega de data_in en RAM
-			RAM(conv_integer(unsigned(address))) <= data_in;
+			--Escribe, solo si la direccion cae dentro de la RAM
+			if (address >= x"80" and address < x"E0") then
+				RAM(conv_integer(unsigned(address(6 downto 0)))) <= data_in;
+			end if;
 		else 
 			--Lee, manda a data_out lo que tiene en RAM
-			data_out <= RAM(conv_integer(unsigned(address)));
+			if (address >= x"80" and address < x"E0") then
+				data_out <= RAM(conv_integer(unsigned(address(6 downto 0))));
+			else
+				data_out <= (others => '0');
+			end if;
 		end if;
 	end if;
 	end process;

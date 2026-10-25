@@ -37,7 +37,8 @@ begin
             RAM <= (others => (others => '0'));
             
         elsif rising_edge(clk) then
-            if (wr = '1') then
+            -- Solo escribe cuando la direccion es un puerto de salida (x"F0" a x"FF")
+            if (wr = '1' and address(7 downto 4) = x"F") then
                 RAM(conv_integer(unsigned(address(3 downto 0)))) <= data_in;
             end if;
         end if;

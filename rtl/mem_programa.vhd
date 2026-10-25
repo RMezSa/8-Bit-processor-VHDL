@@ -98,7 +98,7 @@ process(clk)
 begin
 	if(clk'event and clk = '1') then
 		-- Enviar programa 
-		data_out <= ROM(conv_integer(unsigned(address)));
+		data_out <= ROM(conv_integer(unsigned(address(6 downto 0))));
 	end if;
 end process;
 end architecture;
