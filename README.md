@@ -50,6 +50,8 @@ make wave     # also saves tb_cpu.ghw for GTKWave
 
 Open `quartus/Top_Level_Entity.qpf` in Quartus Prime Lite 18.1 and compile. The project targets the `10M50DAF484C7G` (DE10 Lite) and includes the pin assignments for the clock, reset, input port 0 and output port 0.
 
+The architecture follows the one presented in the course; the VHDL implementation, memory system and testbench are my own.
+
 ## Repository layout
 
 ```
