@@ -913,7 +913,7 @@ Type FSM is (	IDLE,											--IDLE de la maquina de estados
 							PC_Load 	<= '0';
 							PC_Inc 	<= '0';
 							A_Load	<= '1';
-							B_Load 	<= '1';
+							B_Load 	<= '0';
 							ALU_Sel 	<= "0010";
 							CCR_Load <= '1';
 							Bus1_Sel <= "01"; -- "00"= PC, "01"= A, "10"= B
@@ -931,7 +931,7 @@ Type FSM is (	IDLE,											--IDLE de la maquina de estados
 							PC_Load 	<= '0';
 							PC_Inc 	<= '0';
 							A_Load	<= '1';
-							B_Load 	<= '1';
+							B_Load 	<= '0';
 							ALU_Sel 	<= "0110";
 							CCR_Load <= '1';
 							Bus1_Sel <= "01"; -- "00"= PC, "01"= A, "10"= B
@@ -949,7 +949,7 @@ Type FSM is (	IDLE,											--IDLE de la maquina de estados
 							PC_Load 	<= '0';
 							PC_Inc 	<= '0';
 							A_Load	<= '1';
-							B_Load 	<= '1';
+							B_Load 	<= '0';
 							ALU_Sel 	<= "0101";
 							CCR_Load <= '1';
 							Bus1_Sel <= "01"; -- "00"= PC, "01"= A, "10"= B
